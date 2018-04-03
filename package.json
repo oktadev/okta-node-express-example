@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "nodemon node ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -11,6 +12,7 @@
     "express": "~4.16.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "nodemon": "^1.17.3"
   }
 }

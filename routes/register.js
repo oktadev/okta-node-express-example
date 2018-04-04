@@ -37,13 +37,17 @@ router.post('/', async (req, res, next) => {
     res.redirect('/dashboard');
   } catch ({ errorCauses }) {
     const errors = errorCauses.reduce((summary, { errorSummary }) => {
+      if (/Password/.test(errorSummary)) {
+        return Object.assign({ password: errorSummary });
+      }
+
       const [ match, field, error ] = /^(.+?): (.+)$/.exec(errorSummary);
       return Object.assign({ [field]: error }, summary);
     }, {});
 
     console.log(errors);
 
-    res.render('register', { title, errors });
+    res.render('register', { title, errors, body: req.body });
   }
 });
 

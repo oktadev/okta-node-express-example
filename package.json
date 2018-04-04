@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon node ./bin/www",
+    "test": "eslint . ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -14,5 +15,13 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "nodemon": "^1.17.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }

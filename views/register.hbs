@@ -1,0 +1,31 @@
+<form method="post">
+  <label for="firstname">
+    First Name
+    <input id="firstname" name="firstName" required />
+    <label class="error">{{errors.firstName}}</label>
+  </label>
+  <label for="lastname">
+    Last Name
+    <input id="lastname" name="lastName" required />
+    <label class="error">{{errors.lastName}}</label>
+  </label>
+  <label for="email">
+    Email address
+    <input type="email" id="email" name="email" required />
+    <label class="error">{{errors.email}}</label>
+    <label class="error">{{errors.login}}</label>
+  </label>
+  <label for="password">
+    Password
+    <input
+      name="password"
+      type="password"
+      required
+      pattern=".{8}.*"
+    />
+    Must be at least 8 characters
+    <label class="error">{{errors.password}}</label>
+  </label>
+
+  <button type="submit">Register</button>
+</form>

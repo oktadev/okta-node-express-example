@@ -4,7 +4,8 @@
  * Module dependencies.
  */
 
-const app = require('../app')
+require('dotenv').config()
+const { app, oidc } = require('../app')
 const debug = require('debug')('simple-node-authentication:server')
 const http = require('http')
 
@@ -25,7 +26,10 @@ const server = http.createServer(app)
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port)
+oidc.on('ready', () => {
+  server.listen(port)
+})
+oidc.on('error', onError)
 server.on('error', onError)
 server.on('listening', onListening)
 

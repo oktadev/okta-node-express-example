@@ -3,7 +3,10 @@ const router = express.Router()
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Simple Node Authentication' })
+  res.render('index', {
+    title: 'Simple Node Authentication',
+    user: req.userinfo
+  })
 })
 
 module.exports = router

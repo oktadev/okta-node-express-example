@@ -8,6 +8,7 @@ const { ExpressOIDC } = require('@okta/oidc-middleware')
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
+const dashboardRouter = require('./routes/dashboard')
 
 const app = express()
 
@@ -38,6 +39,7 @@ app.use(session({
 app.use(oidc.router)
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/dashboard', oidc.ensureAuthenticated(), dashboardRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

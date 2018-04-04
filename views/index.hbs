@@ -1,3 +1,13 @@
 <h1>{{title}}</h1>
+{{#if user}}
+  <h2>Hi {{user.name}}!</h2>
+{{/if}}
 <p>Welcome to {{title}}</p>
-<p>To access your dashboard, <a href="/login">log in</a>.</p>
+<p>
+  To access your dashboard,
+  {{#if user}}
+    <a href="/dashboard">click here</a>.
+  {{else}}
+    <a href="/login">log in</a>.
+  {{/if}}
+</p>

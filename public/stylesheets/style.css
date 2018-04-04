@@ -1,8 +1,32 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #208075;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #208075;
+  color: white;
+  font-size: 16px;
+}
+
+header > a {
+  color: #d1e5e1;
+}
+
+header,
+main {
+  padding: 50px;
+}
+
+dt {
+  padding: 4px 0;
+  font-weight: bold;
 }

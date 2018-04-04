@@ -5,7 +5,7 @@ const router = express.Router()
 router.get('/', function (req, res, next) {
   res.render('index', {
     title: 'Simple Node Authentication',
-    user: req.userinfo
+    userinfo: req.userinfo
   })
 })
 

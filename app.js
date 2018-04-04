@@ -40,6 +40,10 @@ app.use(oidc.router)
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/dashboard', oidc.ensureAuthenticated(), dashboardRouter)
+app.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
+})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

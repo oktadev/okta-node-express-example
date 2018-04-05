@@ -17,7 +17,7 @@ const oidc = new ExpressOIDC({
   client_id: process.env.CLIENT_ID,
   client_secret: process.env.CLIENT_SECRET,
   redirect_uri: `${process.env.HOST_URL}/authorization-code/callback`,
-  scope: 'openid profile'
+  scope: 'openid profile',
 })
 
 // view engine setup
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(session({
   secret: process.env.APP_SECRET,
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: false,
 }))
 
 app.use(oidc.router)

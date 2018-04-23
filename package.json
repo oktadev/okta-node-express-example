@@ -1,0 +1,32 @@
+{
+  "name": "simple-node-authentication",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon node ./bin/www",
+    "test": "eslint . ./bin/www",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@okta/oidc-middleware": "^0.1.1",
+    "@okta/okta-sdk-nodejs": "^1.1.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^5.0.1",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "lodash": "^4.17.5",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.17.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

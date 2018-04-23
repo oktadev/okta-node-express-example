@@ -1,0 +1,18 @@
+<p>Welcome to {{title}}</p>
+<p>
+  To access your dashboard,
+  {{#if userinfo}}
+    <a href="/dashboard">click here</a>.
+  {{else}}
+    <a href="/dashboard">sign in</a>.
+  </p>
+  <p>
+    If you don't have an account, you can
+    <a href="/register">register for free</a>.
+  </p>
+  <p>
+    If you have an account, but forgot your password,
+    <a href="/reset-password">click here</a> to
+    send a recovery link to your email address.
+  {{/if}}
+</p>

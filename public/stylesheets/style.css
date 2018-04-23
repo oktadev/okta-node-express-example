@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #208075;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #208075;
+  color: white;
+  font-size: 16px;
+}
+
+header > a {
+  color: #d1e5e1;
+}
+
+header,
+main {
+  padding: 50px;
+}
+
+dt {
+  padding: 4px 0;
+  font-weight: bold;
+}
+
+/* Registration */
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  max-width: 500px;
+}
+
+form > label {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  width: 100%;
+  height: 50px;
+  padding: 14px;
+  margin: 3px 0;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+form > button {
+  margin: 10px 0;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+label.error {
+  color: #c21515;
+}

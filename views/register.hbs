@@ -1,0 +1,31 @@
+<h4>After creating your account, you will be asked to sign in and provide a security question.</h4>
+<form method="post">
+  <label for="firstname">
+    First Name
+    <input id="firstname" name="firstName" required value="{{body.firstName}}" />
+    <label class="error">{{errors.firstName}}</label>
+  </label>
+  <label for="lastname">
+    Last Name
+    <input id="lastname" name="lastName" required value="{{body.lastName}}" />
+    <label class="error">{{errors.lastName}}</label>
+  </label>
+  <label for="email">
+    Email address
+    <input type="email" id="email" name="email" required value="{{body.email}}" />
+    <label class="error">{{errors.email}}</label>
+    <label class="error">{{errors.login}}</label>
+  </label>
+  <label for="password">
+    Password
+    <input
+      name="password"
+      type="password"
+      required
+      value="{{body.password}}"
+    />
+    <label class="error">{{errors.password}}</label>
+  </label>
+
+  <button type="submit">Register</button>
+</form>

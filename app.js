@@ -6,6 +6,7 @@ const logger = require('morgan')
 const session = require('express-session')
 const { ExpressOIDC } = require('@okta/oidc-middleware')
 
+const okta = require('./okta')
 const indexRouter = require('./routes/index')
 const dashboardRouter = require('./routes/dashboard')
 const registrationRouter = require('./routes/register')
@@ -38,6 +39,8 @@ app.use(session({
 }))
 
 app.use(oidc.router)
+app.use(okta.middleware)
+
 app.use('/', indexRouter)
 app.use('/dashboard', oidc.ensureAuthenticated(), dashboardRouter)
 app.use('/register', registrationRouter)

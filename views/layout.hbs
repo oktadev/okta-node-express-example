@@ -7,12 +7,12 @@
   <body>
     <header>
       <h1>{{title}}</h1>
-      {{#if userinfo}}
+      {{#if user}}
         <div>
-          Signed in as {{userinfo.name}}
+          Signed in as {{user.profile.firstName}} {{user.profile.lastName}}
         </div>
       {{/if}}
-      {{#if userinfo}}
+      {{#if user}}
         <a href="/logout">Sign out</a>
       {{else}}
         <a href="/login">Sign in</a>

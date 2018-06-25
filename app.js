@@ -9,6 +9,7 @@ const { ExpressOIDC } = require('@okta/oidc-middleware')
 const okta = require('./okta')
 const indexRouter = require('./routes/index')
 const dashboardRouter = require('./routes/dashboard')
+const profileRouter = require('./routes/profile')
 const registrationRouter = require('./routes/register')
 const resetPassword = require('./routes/reset-password')
 
@@ -43,6 +44,7 @@ app.use(okta.middleware)
 
 app.use('/', indexRouter)
 app.use('/dashboard', oidc.ensureAuthenticated(), dashboardRouter)
+app.use('/profile', oidc.ensureAuthenticated(), profileRouter)
 app.use('/register', registrationRouter)
 app.use('/reset-password', resetPassword)
 app.get('/logout', (req, res) => {

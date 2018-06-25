@@ -1,0 +1,18 @@
+<form method="post">
+  {{#each fields}}
+    <div>
+      <label for="{{this.name}}">
+        {{this.label}}
+        <input
+          id="{{this.name}}"
+          {{#if this.type}}type="{{this.type}}"{{/if}}
+          name="{{this.name}}"
+          {{#if this.required}}required{{/if}}
+          value="{{this.value}}"
+        />
+      </label>
+    </div>
+  {{/each}}
+
+  <button type="submit">Save</button>
+</form>

@@ -8,9 +8,9 @@
     <header>
       <h1>{{title}}</h1>
       {{#if user}}
-        <div>
+        <a href="/profile">
           Signed in as {{user.profile.firstName}} {{user.profile.lastName}}
-        </div>
+        </a>
       {{/if}}
       {{#if user}}
         <a href="/logout">Sign out</a>

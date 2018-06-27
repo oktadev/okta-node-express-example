@@ -2,7 +2,7 @@
 
 This example shows how to create a website in Node and Express that uses Okta for authentication. The application was bootstrapped with [Express Generator](https://expressjs.com/en/starter/generator.html). You can see it online at <https://okta-node-express-example.herokuapp.com>.
 
-Please read [Simple Node Authentication](https://developer.okta.com/blog/2018/04/24/simple-node-authentication) to see how this application was created.
+Please read [Simple Node Authentication](https://developer.okta.com/blog/2018/04/24/simple-node-authentication) to see how this application was created, and [How to Securely Manage Users in Your Node App](https://developer.okta.com/blog/2018/06/26/securely-manage-users-node-app) to see how the user profile page was created.
 
 ## Getting Started
 
@@ -34,12 +34,15 @@ Your Okta application should have settings similar to the following:
 
 ![Okta Application Settings](images/okta-app-settings.png)
 
-You will also need an API token:
+You will also need two API tokens:
 
 * Log in to your Okta account, then navigate to **API > Tokens** and click the **Create Token** button
-* Enter a name that will help you remember what this is used for (e.g. "registration")
+* Enter a name that will help you remember what this is used for
+  * The first one will be for registering users, so a name like "Registration" would work here
+  * The second token will be for fetching and editing user profiles, so you could call it something like "User Profiles"
 * Save the provided **token value** for later
   * This will only be displayed once. If you lose it, you will need to create another API token
+* Repeat this process for the next token
 
 Now create a file called `.env` in the project root and add the following variables, replacing the values with your own from the previous steps.
 
@@ -48,7 +51,8 @@ HOST_URL=http://localhost:3000
 ORG_URL=https://dev-123456.oktapreview.com
 CLIENT_ID=okta-application-client-id
 CLIENT_SECRET=okta-application-client-secret
-REGISTRATION_TOKEN=okta-api-token
+REGISTRATION_TOKEN=okta-registration-api-token
+USER_PROFILE_TOKEN=okta-user-profile-api-token
 APP_SECRET=something-random
 ```
 
@@ -57,6 +61,8 @@ One way to get a random `APP_SECRET` is to use the following command line, which
 ```bash
 echo "APP_SECRET=`openssl rand -base64 32`" >> .env
 ```
+
+The app also assumes users have `birthdate` and `favoriteColor` custom user attributes. Those need to be added from the Okta Developer Console by going to **Users > Profile Editor**, then click the **Profile** button on the profile labeled **User**. Click **Add Attribute**, then give it a display name like `Birth Date` and a variable name of `birthdate` (case sensitive). Click **Save and Add Another** to add another one with the variable name `favoriteColor`, then click **Save**. The rest of the options can stay at the default.
 
 Now run the application:
 

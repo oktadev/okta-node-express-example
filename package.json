@@ -8,7 +8,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@okta/oidc-middleware": "^0.1.1",
+    "@okta/oidc-middleware": "^5.0.0",
     "@okta/okta-sdk-nodejs": "^1.1.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
